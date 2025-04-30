@@ -29,97 +29,137 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
+            btnUsuario = new Button();
+            btnPedido = new Button();
+            btnComanda = new Button();
+            btnCardapio = new Button();
+            btnFechar = new Button();
+            btnMinimizar = new Button();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(button4);
-            groupBox1.Controls.Add(button3);
-            groupBox1.Controls.Add(button2);
-            groupBox1.Controls.Add(button1);
+            groupBox1.Controls.Add(btnUsuario);
+            groupBox1.Controls.Add(btnPedido);
+            groupBox1.Controls.Add(btnComanda);
+            groupBox1.Controls.Add(btnCardapio);
             groupBox1.ForeColor = Color.White;
             groupBox1.Location = new Point(59, 72);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(974, 324);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
-            groupBox1.Text = "groupBox1";
+            groupBox1.Text = "Senac Foods";
             // 
-            // button1
+            // btnUsuario
             // 
-            button1.BackColor = Color.FromArgb(255, 255, 128);
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatAppearance.MouseDownBackColor = Color.White;
-            button1.FlatAppearance.MouseOverBackColor = Color.Gray;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Rockwell", 16F);
-            button1.ForeColor = Color.Black;
-            button1.Location = new Point(66, 89);
-            button1.Name = "button1";
-            button1.Size = new Size(172, 155);
-            button1.TabIndex = 0;
-            button1.Text = "Cardápio";
-            button1.UseVisualStyleBackColor = false;
+            btnUsuario.BackColor = Color.FromArgb(255, 128, 128);
+            btnUsuario.FlatAppearance.BorderSize = 0;
+            btnUsuario.FlatAppearance.MouseDownBackColor = Color.White;
+            btnUsuario.FlatAppearance.MouseOverBackColor = Color.Gray;
+            btnUsuario.FlatStyle = FlatStyle.Flat;
+            btnUsuario.Font = new Font("Rockwell", 16F);
+            btnUsuario.ForeColor = Color.Black;
+            btnUsuario.Location = new Point(745, 89);
+            btnUsuario.Name = "btnUsuario";
+            btnUsuario.Size = new Size(172, 155);
+            btnUsuario.TabIndex = 0;
+            btnUsuario.Text = "Usuários";
+            btnUsuario.UseVisualStyleBackColor = false;
+            btnUsuario.Click += btnUsuario_Click;
             // 
-            // button2
+            // btnPedido
             // 
-            button2.BackColor = Color.FromArgb(128, 255, 128);
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatAppearance.MouseDownBackColor = Color.White;
-            button2.FlatAppearance.MouseOverBackColor = Color.Gray;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Rockwell", 16F);
-            button2.ForeColor = Color.Black;
-            button2.Location = new Point(289, 89);
-            button2.Name = "button2";
-            button2.Size = new Size(172, 155);
-            button2.TabIndex = 0;
-            button2.Text = "Comanda";
-            button2.UseVisualStyleBackColor = false;
+            btnPedido.BackColor = Color.DeepSkyBlue;
+            btnPedido.FlatAppearance.BorderSize = 0;
+            btnPedido.FlatAppearance.MouseDownBackColor = Color.White;
+            btnPedido.FlatAppearance.MouseOverBackColor = Color.Gray;
+            btnPedido.FlatStyle = FlatStyle.Flat;
+            btnPedido.Font = new Font("Rockwell", 16F);
+            btnPedido.ForeColor = Color.Black;
+            btnPedido.Location = new Point(516, 89);
+            btnPedido.Name = "btnPedido";
+            btnPedido.Size = new Size(172, 155);
+            btnPedido.TabIndex = 0;
+            btnPedido.Text = "Pedido Cozinha";
+            btnPedido.UseVisualStyleBackColor = false;
+            btnPedido.Click += btnPedido_Click;
             // 
-            // button3
+            // btnComanda
             // 
-            button3.BackColor = Color.DeepSkyBlue;
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatAppearance.MouseDownBackColor = Color.White;
-            button3.FlatAppearance.MouseOverBackColor = Color.Gray;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Rockwell", 16F);
-            button3.ForeColor = Color.Black;
-            button3.Location = new Point(516, 89);
-            button3.Name = "button3";
-            button3.Size = new Size(172, 155);
-            button3.TabIndex = 0;
-            button3.Text = "Pedido Cozinha";
-            button3.UseVisualStyleBackColor = false;
+            btnComanda.BackColor = Color.FromArgb(128, 255, 128);
+            btnComanda.FlatAppearance.BorderSize = 0;
+            btnComanda.FlatAppearance.MouseDownBackColor = Color.White;
+            btnComanda.FlatAppearance.MouseOverBackColor = Color.Gray;
+            btnComanda.FlatStyle = FlatStyle.Flat;
+            btnComanda.Font = new Font("Rockwell", 16F);
+            btnComanda.ForeColor = Color.Black;
+            btnComanda.Location = new Point(289, 89);
+            btnComanda.Name = "btnComanda";
+            btnComanda.Size = new Size(172, 155);
+            btnComanda.TabIndex = 0;
+            btnComanda.Text = "Comanda";
+            btnComanda.UseVisualStyleBackColor = false;
+            btnComanda.Click += btnComanda_Click;
             // 
-            // button4
+            // btnCardapio
             // 
-            button4.BackColor = Color.FromArgb(255, 128, 128);
-            button4.FlatAppearance.BorderSize = 0;
-            button4.FlatAppearance.MouseDownBackColor = Color.White;
-            button4.FlatAppearance.MouseOverBackColor = Color.Gray;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Rockwell", 16F);
-            button4.ForeColor = Color.Black;
-            button4.Location = new Point(745, 89);
-            button4.Name = "button4";
-            button4.Size = new Size(172, 155);
-            button4.TabIndex = 0;
-            button4.Text = "Usuários";
-            button4.UseVisualStyleBackColor = false;
+            btnCardapio.BackColor = Color.FromArgb(255, 255, 128);
+            btnCardapio.FlatAppearance.BorderSize = 0;
+            btnCardapio.FlatAppearance.MouseDownBackColor = Color.White;
+            btnCardapio.FlatAppearance.MouseOverBackColor = Color.Gray;
+            btnCardapio.FlatStyle = FlatStyle.Flat;
+            btnCardapio.Font = new Font("Rockwell", 16F);
+            btnCardapio.ForeColor = Color.Black;
+            btnCardapio.Location = new Point(71, 89);
+            btnCardapio.Name = "btnCardapio";
+            btnCardapio.Size = new Size(172, 155);
+            btnCardapio.TabIndex = 0;
+            btnCardapio.Text = "Cardápio";
+            btnCardapio.UseVisualStyleBackColor = false;
+            btnCardapio.Click += btnCardapio_Click;
+            // 
+            // btnFechar
+            // 
+            btnFechar.FlatAppearance.BorderSize = 0;
+            btnFechar.FlatAppearance.MouseDownBackColor = Color.White;
+            btnFechar.FlatAppearance.MouseOverBackColor = Color.Silver;
+            btnFechar.FlatStyle = FlatStyle.Flat;
+            btnFechar.Font = new Font("Rockwell Extra Bold", 12F);
+            btnFechar.ForeColor = Color.White;
+            btnFechar.Location = new Point(1032, 12);
+            btnFechar.Name = "btnFechar";
+            btnFechar.Size = new Size(47, 36);
+            btnFechar.TabIndex = 1;
+            btnFechar.Text = "X";
+            btnFechar.UseVisualStyleBackColor = true;
+            btnFechar.Click += btnFechar_Click;
+            // 
+            // btnMinimizar
+            // 
+            btnMinimizar.FlatAppearance.BorderSize = 0;
+            btnMinimizar.FlatAppearance.MouseDownBackColor = Color.White;
+            btnMinimizar.FlatAppearance.MouseOverBackColor = Color.Silver;
+            btnMinimizar.FlatStyle = FlatStyle.Flat;
+            btnMinimizar.Font = new Font("Rockwell Extra Bold", 15F);
+            btnMinimizar.ForeColor = Color.White;
+            btnMinimizar.Location = new Point(981, 11);
+            btnMinimizar.Name = "btnMinimizar";
+            btnMinimizar.Size = new Size(47, 36);
+            btnMinimizar.TabIndex = 1;
+            btnMinimizar.Text = "-";
+            btnMinimizar.UseVisualStyleBackColor = true;
+            btnMinimizar.Click += btnMinimizar_Click;
             // 
             // FrmPrincipal
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
-            ClientSize = new Size(1091, 500);
+            ClientSize = new Size(1087, 500);
+            Controls.Add(btnMinimizar);
+            Controls.Add(btnFechar);
             Controls.Add(groupBox1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FrmPrincipal";
@@ -132,9 +172,11 @@
         #endregion
 
         private GroupBox groupBox1;
-        private Button button1;
-        private Button button4;
-        private Button button3;
-        private Button button2;
+        private Button btnCardapio;
+        private Button btnUsuario;
+        private Button btnPedido;
+        private Button btnComanda;
+        private Button btnFechar;
+        private Button btnMinimizar;
     }
 }

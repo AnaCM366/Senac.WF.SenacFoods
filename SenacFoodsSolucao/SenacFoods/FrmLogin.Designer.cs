@@ -30,6 +30,7 @@
         {
             panel1 = new Panel();
             panel2 = new Panel();
+            btnFechar = new Button();
             btnEntrar = new Button();
             txtSenha = new TextBox();
             txtLogin = new TextBox();
@@ -49,16 +50,33 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(btnFechar);
             panel2.Controls.Add(btnEntrar);
             panel2.Controls.Add(txtSenha);
             panel2.Controls.Add(txtLogin);
             panel2.Controls.Add(label2);
             panel2.Controls.Add(label1);
             panel2.Dock = DockStyle.Right;
-            panel2.Location = new Point(353, 0);
+            panel2.Location = new Point(361, 0);
             panel2.Name = "panel2";
             panel2.Size = new Size(699, 568);
             panel2.TabIndex = 1;
+            // 
+            // btnFechar
+            // 
+            btnFechar.FlatAppearance.BorderSize = 0;
+            btnFechar.FlatAppearance.MouseDownBackColor = Color.White;
+            btnFechar.FlatAppearance.MouseOverBackColor = Color.Silver;
+            btnFechar.FlatStyle = FlatStyle.Flat;
+            btnFechar.Font = new Font("Rockwell Extra Bold", 12F);
+            btnFechar.ForeColor = Color.White;
+            btnFechar.Location = new Point(649, 3);
+            btnFechar.Name = "btnFechar";
+            btnFechar.Size = new Size(47, 36);
+            btnFechar.TabIndex = 3;
+            btnFechar.Text = "X";
+            btnFechar.UseVisualStyleBackColor = true;
+            btnFechar.Click += btnFechar_Click;
             // 
             // btnEntrar
             // 
@@ -74,6 +92,7 @@
             btnEntrar.TabIndex = 2;
             btnEntrar.Text = "Entrar";
             btnEntrar.UseVisualStyleBackColor = true;
+            btnEntrar.Click += btnEntrar_Click;
             // 
             // txtSenha
             // 
@@ -98,6 +117,7 @@
             txtLogin.Size = new Size(435, 43);
             txtLogin.TabIndex = 0;
             txtLogin.Text = "USUÁRIO";
+            txtLogin.TextChanged += txtLogin_TextChanged;
             // 
             // label2
             // 
@@ -126,7 +146,7 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.OrangeRed;
-            ClientSize = new Size(1052, 568);
+            ClientSize = new Size(1060, 568);
             Controls.Add(panel2);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
@@ -147,5 +167,6 @@
         private Label label1;
         private Label label2;
         private Button btnEntrar;
+        private Button btnFechar;
     }
 }
