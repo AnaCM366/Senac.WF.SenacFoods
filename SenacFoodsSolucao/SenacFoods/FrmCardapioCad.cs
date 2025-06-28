@@ -41,10 +41,14 @@ namespace SenacFoods
                     Preco = preco,
                     PossuiPreparo = possuiPreparo
                 };
-                // adicionar o cardapio
-
-                // salvar as alterações no banco
+                // adicionar o cardapio   // salvar as alterações no banco
+                banco.CardapioItems.Add(cardapio);
+                banco.SaveChanges();
             }
+            MessageBox.Show("Cardápio salvo com sucesso!", 
+                "Sucesso", 
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.Close();
         }
     }
 }
