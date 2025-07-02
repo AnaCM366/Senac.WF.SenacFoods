@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
-            button2 = new Button();
-            button1 = new Button();
+            btnExcluir = new Button();
+            btnAdicionar = new Button();
+            btnEditar = new Button();
             dataGridView1 = new DataGridView();
             label1 = new Label();
-            textBox1 = new TextBox();
+            txtPesquisar = new TextBox();
             btnFechar = new Button();
-            button3 = new Button();
             panel1 = new Panel();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -44,9 +44,9 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(button3);
-            groupBox1.Controls.Add(button2);
-            groupBox1.Controls.Add(button1);
+            groupBox1.Controls.Add(btnExcluir);
+            groupBox1.Controls.Add(btnAdicionar);
+            groupBox1.Controls.Add(btnEditar);
             groupBox1.Controls.Add(dataGridView1);
             groupBox1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             groupBox1.Location = new Point(12, 94);
@@ -55,32 +55,42 @@
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Cardápio";
-            groupBox1.Enter += groupBox1_Enter;
             // 
-            // button2
+            // btnExcluir
             // 
-            button2.BackColor = Color.FromArgb(255, 255, 128);
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            button2.ForeColor = SystemColors.ControlText;
-            button2.Location = new Point(34, 39);
-            button2.Name = "button2";
-            button2.Size = new Size(153, 57);
-            button2.TabIndex = 2;
-            button2.Text = "+ Item";
-            button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
+            btnExcluir.BackColor = Color.FromArgb(255, 128, 128);
+            btnExcluir.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            btnExcluir.Location = new Point(739, 495);
+            btnExcluir.Name = "btnExcluir";
+            btnExcluir.Size = new Size(153, 67);
+            btnExcluir.TabIndex = 3;
+            btnExcluir.Text = "X Excluir";
+            btnExcluir.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // btnAdicionar
             // 
-            button1.BackColor = Color.FromArgb(128, 255, 128);
-            button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            button1.Location = new Point(898, 495);
-            button1.Name = "button1";
-            button1.Size = new Size(153, 67);
-            button1.TabIndex = 1;
-            button1.Text = "# Editar";
-            button1.UseVisualStyleBackColor = false;
+            btnAdicionar.BackColor = Color.FromArgb(255, 255, 128);
+            btnAdicionar.FlatStyle = FlatStyle.Flat;
+            btnAdicionar.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            btnAdicionar.ForeColor = SystemColors.ControlText;
+            btnAdicionar.Location = new Point(34, 39);
+            btnAdicionar.Name = "btnAdicionar";
+            btnAdicionar.Size = new Size(153, 57);
+            btnAdicionar.TabIndex = 2;
+            btnAdicionar.Text = "+ Item";
+            btnAdicionar.UseVisualStyleBackColor = false;
+            btnAdicionar.Click += btnAdicionar_Click;
+            // 
+            // btnEditar
+            // 
+            btnEditar.BackColor = Color.FromArgb(128, 255, 128);
+            btnEditar.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            btnEditar.Location = new Point(898, 495);
+            btnEditar.Name = "btnEditar";
+            btnEditar.Size = new Size(153, 67);
+            btnEditar.TabIndex = 1;
+            btnEditar.Text = "# Editar";
+            btnEditar.UseVisualStyleBackColor = false;
             // 
             // dataGridView1
             // 
@@ -100,15 +110,14 @@
             label1.Size = new Size(123, 32);
             label1.TabIndex = 1;
             label1.Text = "Pesquisar";
-            label1.Click += label1_Click;
             // 
-            // textBox1
+            // txtPesquisar
             // 
-            textBox1.Location = new Point(187, 22);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(612, 31);
-            textBox1.TabIndex = 2;
-            textBox1.TextChanged += textBox1_TextChanged;
+            txtPesquisar.Location = new Point(187, 22);
+            txtPesquisar.Name = "txtPesquisar";
+            txtPesquisar.Size = new Size(612, 31);
+            txtPesquisar.TabIndex = 2;
+            txtPesquisar.TextChanged += txtPesquisar_TextChanged;
             // 
             // btnFechar
             // 
@@ -125,22 +134,12 @@
             btnFechar.TabIndex = 4;
             btnFechar.Text = "X";
             btnFechar.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            button3.BackColor = Color.FromArgb(255, 128, 128);
-            button3.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            button3.Location = new Point(739, 495);
-            button3.Name = "button3";
-            button3.Size = new Size(153, 67);
-            button3.TabIndex = 3;
-            button3.Text = "X Excluir";
-            button3.UseVisualStyleBackColor = false;
+            btnFechar.Click += btnFechar_Click;
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(255, 128, 0);
-            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(txtPesquisar);
             panel1.Controls.Add(label1);
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
@@ -171,12 +170,13 @@
 
         private GroupBox groupBox1;
         private DataGridView dataGridView1;
-        private Button button1;
-        private Button button2;
+        private Button btnEditar;
+        private Button btnAdicionar;
         private Label label1;
-        private TextBox textBox1;
+        private TextBox txtPesquisar;
         private Button btnFechar;
-        private Button button3;
+        private Button btnExcluir;
         private Panel panel1;
+        
     }
 }
