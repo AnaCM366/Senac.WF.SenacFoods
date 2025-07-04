@@ -68,5 +68,16 @@ namespace SenacFoods
         {
 
         }
+
+        private void FrmPrincipal_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnMesa_Click(object sender, EventArgs e)
+        {
+            var frmMesa = new FrmMesa();
+            frmMesa.ShowDialog();
+        }
     }
 }

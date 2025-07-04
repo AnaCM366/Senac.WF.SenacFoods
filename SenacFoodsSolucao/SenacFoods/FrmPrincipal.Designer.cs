@@ -36,19 +36,21 @@
             btnFechar = new Button();
             btnMinimizar = new Button();
             lblMensagem = new Label();
+            btnMesa = new Button();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
             // 
             groupBox1.Controls.Add(btnUsuario);
+            groupBox1.Controls.Add(btnMesa);
             groupBox1.Controls.Add(btnPedido);
             groupBox1.Controls.Add(btnComanda);
             groupBox1.Controls.Add(btnCardapio);
             groupBox1.ForeColor = Color.White;
-            groupBox1.Location = new Point(59, 72);
+            groupBox1.Location = new Point(32, 72);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(974, 324);
+            groupBox1.Size = new Size(1016, 324);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Senac Foods";
@@ -62,7 +64,7 @@
             btnUsuario.FlatStyle = FlatStyle.Flat;
             btnUsuario.Font = new Font("Rockwell", 16F);
             btnUsuario.ForeColor = Color.Black;
-            btnUsuario.Location = new Point(745, 89);
+            btnUsuario.Location = new Point(618, 89);
             btnUsuario.Name = "btnUsuario";
             btnUsuario.Size = new Size(172, 155);
             btnUsuario.TabIndex = 0;
@@ -79,7 +81,7 @@
             btnPedido.FlatStyle = FlatStyle.Flat;
             btnPedido.Font = new Font("Rockwell", 16F);
             btnPedido.ForeColor = Color.Black;
-            btnPedido.Location = new Point(516, 89);
+            btnPedido.Location = new Point(420, 89);
             btnPedido.Name = "btnPedido";
             btnPedido.Size = new Size(172, 155);
             btnPedido.TabIndex = 0;
@@ -96,7 +98,7 @@
             btnComanda.FlatStyle = FlatStyle.Flat;
             btnComanda.Font = new Font("Rockwell", 16F);
             btnComanda.ForeColor = Color.Black;
-            btnComanda.Location = new Point(289, 89);
+            btnComanda.Location = new Point(222, 89);
             btnComanda.Name = "btnComanda";
             btnComanda.Size = new Size(172, 155);
             btnComanda.TabIndex = 0;
@@ -113,7 +115,7 @@
             btnCardapio.FlatStyle = FlatStyle.Flat;
             btnCardapio.Font = new Font("Rockwell", 16F);
             btnCardapio.ForeColor = Color.Black;
-            btnCardapio.Location = new Point(71, 89);
+            btnCardapio.Location = new Point(28, 89);
             btnCardapio.Name = "btnCardapio";
             btnCardapio.Size = new Size(172, 155);
             btnCardapio.TabIndex = 0;
@@ -165,6 +167,23 @@
             lblMensagem.Text = "lblMensagem";
             lblMensagem.Click += label1_Click;
             // 
+            // btnMesa
+            // 
+            btnMesa.BackColor = Color.FromArgb(255, 128, 0);
+            btnMesa.FlatAppearance.BorderSize = 0;
+            btnMesa.FlatAppearance.MouseDownBackColor = Color.White;
+            btnMesa.FlatAppearance.MouseOverBackColor = Color.Gray;
+            btnMesa.FlatStyle = FlatStyle.Flat;
+            btnMesa.Font = new Font("Rockwell", 16F);
+            btnMesa.ForeColor = Color.Black;
+            btnMesa.Location = new Point(815, 89);
+            btnMesa.Name = "btnMesa";
+            btnMesa.Size = new Size(172, 155);
+            btnMesa.TabIndex = 0;
+            btnMesa.Text = "Mesa";
+            btnMesa.UseVisualStyleBackColor = false;
+            btnMesa.Click += btnMesa_Click;
+            // 
             // FrmPrincipal
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -179,6 +198,7 @@
             Name = "FrmPrincipal";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmPrincipal";
+            Load += FrmPrincipal_Load;
             groupBox1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
@@ -194,5 +214,6 @@
         private Button btnFechar;
         private Button btnMinimizar;
         private Label lblMensagem;
+        private Button btnMesa;
     }
 }
