@@ -17,6 +17,16 @@ namespace SenacFoods
             InitializeComponent();
         }
 
+        private void FrmMesa_Load(object sender, EventArgs e)
+        {
+            BuscarMesa();
+        }
+
+        private void BuscarMesa()
+        {
+
+        }
+
         private void btnFecharMesa_Click(object sender, EventArgs e)
         {
             Close();

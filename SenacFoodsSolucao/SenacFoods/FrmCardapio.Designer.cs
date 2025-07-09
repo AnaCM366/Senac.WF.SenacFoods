@@ -66,6 +66,7 @@
             btnExcluir.TabIndex = 3;
             btnExcluir.Text = "X Excluir";
             btnExcluir.UseVisualStyleBackColor = false;
+            btnExcluir.Click += btnExcluir_Click;
             // 
             // btnAdicionar
             // 
@@ -84,6 +85,7 @@
             // btnEditar
             // 
             btnEditar.BackColor = Color.FromArgb(128, 255, 128);
+            btnEditar.Enabled = false;
             btnEditar.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnEditar.Location = new Point(898, 495);
             btnEditar.Name = "btnEditar";
@@ -91,15 +93,20 @@
             btnEditar.TabIndex = 1;
             btnEditar.Text = "# Editar";
             btnEditar.UseVisualStyleBackColor = false;
+            btnEditar.Click += btnEditar_Click;
             // 
             // dataGridView1
             // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(34, 113);
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 62;
             dataGridView1.Size = new Size(1017, 376);
             dataGridView1.TabIndex = 0;
+            dataGridView1.CellClick += dataGridView1_CellClick;
             // 
             // label1
             // 

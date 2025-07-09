@@ -12,6 +12,7 @@ namespace SenacFoods
 {
     public partial class FrmCardapio : Form
     {
+        CardapioItem? cardapioSelecionado;
         public FrmCardapio()
         {
             InitializeComponent();
@@ -57,6 +58,50 @@ namespace SenacFoods
         {
             // chamar o metodo buscar cardapio
             BuscarCadapio();
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                // pegar o cardapio selecionado
+                var cardapioSelecionado = dataGridView1.Rows[e.RowIndex].DataBoundItem as CardapioItem;
+                btnEditar.Enabled = true;
+            }
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            if (cardapioSelecionado != null)
+            {
+                // abrir o formulario de edição
+                var cardapio = new FrmCardapioCad(cardapioSelecionado);
+                cardapio.ShowDialog();
+                // atualizar a lista de cardápios
+                BuscarCadapio();
+                cardapioSelecionado = null;
+            }
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            if (cardapioSelecionado != null)
+            {
+                using(var bancoDeDados = new ComandaDBContext())
+                {
+                    bancoDeDados.CardapioItems.Remove(cardapioSelecionado);
+                    bancoDeDados.SaveChanges();
+                }
+                MessageBox.Show("Cardápio excluído com sucesso!", "Sucesso",
+                    MessageBoxButtons.OK,MessageBoxIcon.Information);
+                BuscarCadapio();
+                cardapioSelecionado = null;
+            }
+            else
+            {
+                MessageBox.Show("Selecione um cardápio para excluir.", "Aviso",
+                    MessageBoxButtons.OK,MessageBoxIcon.Warning);
+            }
         }
     }
 }
