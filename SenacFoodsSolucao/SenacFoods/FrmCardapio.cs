@@ -70,9 +70,10 @@ namespace SenacFoods
             }
         }
 
+        // Clique do Editar
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            if (cardapioSelecionado != null)
+            if (cardapioSelecionado == null)
             {
                 // abrir o formulario de edição
                 var cardapio = new FrmCardapioCad(cardapioSelecionado);
