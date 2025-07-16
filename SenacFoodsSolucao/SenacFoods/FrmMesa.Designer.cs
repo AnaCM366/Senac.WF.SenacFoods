@@ -59,6 +59,7 @@
             txtPesquisarMesa.Name = "txtPesquisarMesa";
             txtPesquisarMesa.Size = new Size(612, 31);
             txtPesquisarMesa.TabIndex = 2;
+            txtPesquisarMesa.TextChanged += txtPesquisarMesa_TextChanged;
             // 
             // btnFecharMesa
             // 
@@ -111,6 +112,7 @@
             btnExcluirMesa.TabIndex = 3;
             btnExcluirMesa.Text = "X Excluir";
             btnExcluirMesa.UseVisualStyleBackColor = false;
+            btnExcluirMesa.Click += btnExcluirMesa_Click;
             // 
             // btnAdicionarMesa
             // 
@@ -136,6 +138,7 @@
             btnEditarMesa.TabIndex = 1;
             btnEditarMesa.Text = "# Editar";
             btnEditarMesa.UseVisualStyleBackColor = false;
+            btnEditarMesa.Click += btnEditarMesa_Click;
             // 
             // dataGridView1
             // 
@@ -145,6 +148,7 @@
             dataGridView1.RowHeadersWidth = 62;
             dataGridView1.Size = new Size(1017, 376);
             dataGridView1.TabIndex = 0;
+            dataGridView1.CellClick += dataGridView1_CellClick;
             // 
             // FrmMesa
             // 

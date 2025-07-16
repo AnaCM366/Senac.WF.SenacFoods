@@ -14,6 +14,10 @@ namespace SenacFoods
     {
         public FrmMesaCad()
         {
+        }
+
+        public FrmMesaCad(Mesa? mesaSelecionado)
+        {
             InitializeComponent();
         }
 
