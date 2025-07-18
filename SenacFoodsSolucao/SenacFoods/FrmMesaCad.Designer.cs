@@ -128,6 +128,7 @@
             btnSalvarMesa.TabIndex = 1;
             btnSalvarMesa.Text = "# Salvar";
             btnSalvarMesa.UseVisualStyleBackColor = false;
+            btnSalvarMesa.Click += btnSalvarMesa_Click;
             // 
             // FrmMesaCad
             // 

@@ -33,18 +33,19 @@ namespace SenacFoods
                 if (!string.IsNullOrEmpty(txtPesquisarMesa.Text))
                 {
                     // filtrar as mesas pelo titulo
-                    mesa = mesa.Where(c => c.Titulo.ToLower().Contains(txtPesquisarMesa.Text) ||
-                                                     c.Descricao.Contains(txtPesquisarMesa.Text));
+                    mesa = mesa.Where(c => c.NumeroMesa.ToString().Contains(txtPesquisarMesa.Text) ||
+                                           c.SituacaoMesa.ToString().Contains(txtPesquisarMesa.Text));
                 }
 
                 // popular o grid com a tabela consultada
-                dataGridView1.DataSource = mesa.ToList(); ;
+                dataGridView1.DataSource = mesa.ToList();
             }
         }
 
         private void btnAdicionarMesa_Click(object sender, EventArgs e)
         {
             new FrmMesaCad().ShowDialog();
+            BuscarMesa();
 
         }
         private void btnFecharMesa_Click(object sender, EventArgs e)
