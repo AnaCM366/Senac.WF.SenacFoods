@@ -17,7 +17,6 @@ namespace SenacFoods
         {
             InitializeComponent();
         }
-
         private void FrmMesa_Load(object sender, EventArgs e)
         {
             BuscarMesa();
@@ -64,14 +63,14 @@ namespace SenacFoods
             if (e.RowIndex >= 0)
             {
                 // pegar a mesa selecionada
-                var mesaSelecionado = dataGridView1.Rows[e.RowIndex].DataBoundItem as CardapioItem;
+                MesaSelecionado = dataGridView1.Rows[e.RowIndex].DataBoundItem as Mesa;
                 btnEditarMesa.Enabled = true;
             }
         }
 
         private void btnEditarMesa_Click(object sender, EventArgs e)
         {
-            if (MesaSelecionado == null)
+            if (MesaSelecionado != null)
             {
                 // abrir o formulario de edição
                 var mesa = new FrmMesaCad(MesaSelecionado);
@@ -102,5 +101,6 @@ namespace SenacFoods
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
     }
 }

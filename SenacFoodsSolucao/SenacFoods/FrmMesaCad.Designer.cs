@@ -117,6 +117,7 @@
             btnCancelarMesa.TabIndex = 3;
             btnCancelarMesa.Text = "X Cancelar";
             btnCancelarMesa.UseVisualStyleBackColor = false;
+            btnCancelarMesa.Click += btnCancelarMesa_Click;
             // 
             // btnSalvarMesa
             // 

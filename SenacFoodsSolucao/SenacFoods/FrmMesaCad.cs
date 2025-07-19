@@ -36,7 +36,6 @@ namespace SenacFoods
             }
         }
 
-
         private void btnFecharMesa_Click(object sender, EventArgs e)
         {
             Close();
@@ -61,17 +60,17 @@ namespace SenacFoods
             using (var banco = new ComandaDBContext())
             {
                 // captar os dados da tela
-                int numeroMesa = TituloMesa.ToString();
+                int.TryParse(txtTituloMesa.Text, out var numeroMesa);
 
                 // atualizar a mesa
                 var mesa = banco.Mesas.First(x => x.Id == _mesa.Id);
                 mesa.NumeroMesa = numeroMesa;
 
                 // salvar as alterações no banco
-                banco.Mesas.Update(_mesa);
+                banco.Mesas.Update(mesa);
                 banco.SaveChanges();
             }
-            MessageBox.Show("Cardápio salvo com sucesso!",
+            MessageBox.Show("Mesa salva com sucesso!",
                 "Sucesso",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
@@ -80,7 +79,32 @@ namespace SenacFoods
 
         private void InserirMesa()
         {
-            throw new NotImplementedException();
+            // conectar
+            using (var banco = new ComandaDBContext())
+            {
+
+                // captar os dados da tela
+                int.TryParse(txtTituloMesa.Text, out var numeroMesa);
+
+                // criar uma nova mesa
+                var mesa = new Mesa()
+                {
+                    NumeroMesa = numeroMesa,
+                };
+                // adicionar uma mesa   // salvar as alterações no banco
+                banco.Mesas.Add(mesa);
+                banco.SaveChanges();
+            }
+            MessageBox.Show("Mesa salva com sucesso!",
+                "Sucesso",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+            this.Close();
+        }
+
+        private void btnCancelarMesa_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

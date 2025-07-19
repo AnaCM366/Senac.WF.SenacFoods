@@ -36,6 +36,7 @@
             txtLogin = new TextBox();
             label2 = new Label();
             label1 = new Label();
+            llbTab0 = new LinkLabel();
             panel2.SuspendLayout();
             SuspendLayout();
             // 
@@ -50,6 +51,7 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(llbTab0);
             panel2.Controls.Add(btnFechar);
             panel2.Controls.Add(btnEntrar);
             panel2.Controls.Add(txtSenha);
@@ -89,7 +91,7 @@
             btnEntrar.Location = new Point(148, 355);
             btnEntrar.Name = "btnEntrar";
             btnEntrar.Size = new Size(446, 61);
-            btnEntrar.TabIndex = 2;
+            btnEntrar.TabIndex = 3;
             btnEntrar.Text = "Entrar";
             btnEntrar.UseVisualStyleBackColor = true;
             btnEntrar.Click += btnEntrar_Click;
@@ -103,8 +105,10 @@
             txtSenha.Location = new Point(148, 251);
             txtSenha.Name = "txtSenha";
             txtSenha.Size = new Size(435, 43);
-            txtSenha.TabIndex = 0;
+            txtSenha.TabIndex = 2;
             txtSenha.Text = "SENHA";
+            txtSenha.Enter += txtSenha_Enter;
+            txtSenha.Leave += txtSenha_Leave;
             // 
             // txtLogin
             // 
@@ -115,9 +119,11 @@
             txtLogin.Location = new Point(148, 146);
             txtLogin.Name = "txtLogin";
             txtLogin.Size = new Size(435, 43);
-            txtLogin.TabIndex = 0;
+            txtLogin.TabIndex = 1;
             txtLogin.Text = "USUÁRIO";
             txtLogin.TextChanged += txtLogin_TextChanged;
+            txtLogin.Enter += txtLogin_Enter;
+            txtLogin.Leave += txtLogin_Leave;
             // 
             // label2
             // 
@@ -140,6 +146,17 @@
             label1.Size = new Size(455, 48);
             label1.TabIndex = 1;
             label1.Text = "__________________\u001f\u001f\u001f____________";
+            // 
+            // llbTab0
+            // 
+            llbTab0.AutoSize = true;
+            llbTab0.LinkColor = Color.OrangeRed;
+            llbTab0.Location = new Point(671, 42);
+            llbTab0.Name = "llbTab0";
+            llbTab0.Size = new Size(16, 25);
+            llbTab0.TabIndex = 0;
+            llbTab0.TabStop = true;
+            llbTab0.Text = ".";
             // 
             // FrmLogin
             // 
@@ -168,5 +185,6 @@
         private Label label2;
         private Button btnEntrar;
         private Button btnFechar;
+        private LinkLabel llbTab0;
     }
 }

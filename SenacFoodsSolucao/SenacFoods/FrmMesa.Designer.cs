@@ -160,6 +160,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "FrmMesa";
             Text = "FrmMesa";
+            Load += FrmMesa_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             groupBox1.ResumeLayout(false);

@@ -32,20 +32,20 @@ namespace SenacFoods
                 var usuario = banco
                              .Usuarios
                              .FirstOrDefault(u => u.Email == nome.ToLower() && u.Senha == senha);
-                if(usuario is not null)
+                if (usuario is not null)
                     usuarioValido = true;
             }
-                //SE nome é igual a admin E senha é igual a 123
-                if (usuarioValido)
-                { //RETURNA veradadeiro
-                    return true;
-                }
-                else
-                { // EXIBE uma mensagem de erro
-                    MessageBox.Show("Login ou Senha inválidos");
-                } //RETORNA false
-                return false;
-        } 
+            //SE nome é igual a admin E senha é igual a 123
+            if (usuarioValido)
+            { //RETURNA veradadeiro
+                return true;
+            }
+            else
+            { // EXIBE uma mensagem de erro
+                MessageBox.Show("Login ou Senha inválidos");
+            } //RETORNA false
+            return false;
+        }
 
         private void btnFechar_Click(object sender, EventArgs e)
         {
@@ -57,7 +57,31 @@ namespace SenacFoods
 
         private void txtLogin_TextChanged(object sender, EventArgs e)
         {
+            
+        }
 
+        private void txtLogin_Enter(object sender, EventArgs e)
+        {
+            if (txtLogin.Text == "USUÁRIO")
+                txtLogin.Text = string.Empty;
+        }
+
+        private void txtLogin_Leave(object sender, EventArgs e)
+        {
+            if (txtLogin.Text == string.Empty)
+                txtLogin.Text = "USUÁRIO";
+        }
+
+        private void txtSenha_Enter(object sender, EventArgs e)
+        {
+            if (txtSenha.Text == "SENHA")
+                txtSenha.Text = string.Empty;
+        }
+
+        private void txtSenha_Leave(object sender, EventArgs e)
+        {
+            if (txtSenha.Text == string.Empty)
+                txtSenha.Text = "SENHA";
         }
     }
 }
