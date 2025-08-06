@@ -135,7 +135,7 @@
             btnFechar.FlatStyle = FlatStyle.Flat;
             btnFechar.Font = new Font("Rockwell Extra Bold", 12F);
             btnFechar.ForeColor = Color.White;
-            btnFechar.Location = new Point(1040, 12);
+            btnFechar.Location = new Point(1040, 10);
             btnFechar.Name = "btnFechar";
             btnFechar.Size = new Size(47, 36);
             btnFechar.TabIndex = 4;
